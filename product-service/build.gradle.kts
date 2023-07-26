@@ -5,6 +5,7 @@ plugins {
 	id("io.spring.dependency-management") version "1.1.2"
 	kotlin("jvm") version "1.9.0"
 	kotlin("plugin.spring") version "1.9.0"
+	kotlin("plugin.jpa") version "1.9.0"
 }
 
 group = "com.somsak"
@@ -27,8 +28,10 @@ repositories {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
+	runtimeOnly("org.postgresql:postgresql")
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
