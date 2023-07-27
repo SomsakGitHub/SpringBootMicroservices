@@ -1,23 +1,22 @@
 package com.somsak.productservice.model
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo.Id
+import jakarta.persistence.Entity
 import lombok.AllArgsConstructor
 import lombok.Builder
 import lombok.Data
 import lombok.NoArgsConstructor
-//import org.springframework.data.mongodb.core.mapping.Document
 import java.math.BigDecimal
 
-
-//@Document(value = "product")
+@Entity(name = "product")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Data
 class Product {
     //@Id
-    private val id: String? = null
-    private val name: String? = null
-    private val description: String? = null
-    private val price: BigDecimal? = null
+    var id: String? = null
+    var name: String? = null
+    var description: String? = null
+    var price: BigDecimal? = null
 }
